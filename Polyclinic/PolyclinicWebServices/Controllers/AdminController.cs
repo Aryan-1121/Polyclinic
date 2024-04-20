@@ -46,8 +46,7 @@ namespace PolyclinicWebServices.Controllers
             try
             {
                 patients = repository.GetAllPatientDetails();
-                //tring something
-                Console.WriteLine(patients);
+
             }
             catch (Exception)
             {

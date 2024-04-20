@@ -29,8 +29,7 @@ namespace PolyclinicDALCrossPlatform.Models
             return 0;
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             DotNetEnv.Env.Load();
             var builder = new ConfigurationBuilder()
                        .SetBasePath(Directory.GetCurrentDirectory())
@@ -38,15 +37,9 @@ namespace PolyclinicDALCrossPlatform.Models
 
             var config = builder.Build();
             Console.WriteLine("tryin connection");
-            // var connectionString = config.GetConnectionString("PolyclinicDBConnectionString");
-            // if (!optionsBuilder.IsConfigured)
-            // {
-            //     optionsBuilder.UseSqlServer(connectionString);
-
-            // }
-
             try
             {
+                // var connectionString = config.GetConnectionString("PolyclinicDBConnectionString");
                 var connectionString = Environment.GetEnvironmentVariable("MYSQL_CONNECTION_STRING");
                 if (string.IsNullOrEmpty(connectionString))
                 {
@@ -54,7 +47,7 @@ namespace PolyclinicDALCrossPlatform.Models
                     return;
                 }
                 optionsBuilder.UseMySQL(connectionString);
-                Console.WriteLine("connection done !!!");
+                Console.WriteLine("connection established !!!");
             }
             catch (Exception e)
             {
