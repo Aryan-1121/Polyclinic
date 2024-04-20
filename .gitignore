@@ -1,0 +1,45 @@
+# User-specific Visual Studio Code settings
+.vscode/
+
+
+
+# Ignore .env files containing sensitive information
+*.env
+
+
+
+# Project-specific files
+bin/
+obj/
+
+
+# Ignore .NET Core and Visual Studio build and debug folders
+**/[Bb]in/
+**/[Oo]bj/
+
+
+
+
+# Visual Studio files
+*.VisualState.xml
+.vs/
+
+
+
+
+# NuGet
+**/packages/
+*.nupkg
+# The packages folder can be ignored because of PackageReference 
+**/PackageReference/
+
+
+
+# Windows shortcuts
+*.lnk
+
+
+
+
+
+
